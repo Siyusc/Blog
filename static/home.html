@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title> Home Blog Page </title>
+
+
+    
+
+   
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'home.css')}}">
+
+    
+    {% from "macro.html" import render_field %} 
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul> 
+          {% for message in messages %}
+          
+            <div class="alert alert-success" role="alert">
+                {{message}}
+              </div>
+          
+          {% endfor %}
+        </ul>
+       {% endif %}
+     {% endwith %}
+   
+    
+</head>
+<body>
+   
+
+   <div class="container">
+     <div class="row">
+      <nav class="navbar">
+        <h1> BLOG's </h1>
+        <ul>
+             <li><a href="/create">Register</a></li>
+             <li><a href="/login">Login</a></li>
+             <li><a href="/published/1">Blog's</a></li>
+             <li><a href="">About this</a></li>                
+        </ul>
+      </nav> 
+      <div class="content">
+          <h1> Join us!</h1>
+          <p> Join us and share your ideas! </p>
+          <a href="/create" >Register </a> 
+      </div>
+     </div>
+   </div>
+
+  
+  
+
+</body>
+</html>

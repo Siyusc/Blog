@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'navbar.css')}}">
+  <link rel="preconnect"  href="https//fonts.gstatic.com">
+
+</head>
+<body>
+   <div class="hero">
+    <nav>
+      <h2 class="logo"><span>Blog's</span></h2>
+      <ul>
+        <li><a href= "/home">Home</a></li>
+        <li><a href= "/publish-post">Create a post</a></li>
+        <li><a href= "/published/1">View Posts</a></li>
+        <li><a href= "/logout">Logout</a></li>
+      </ul>
+      <form method = "POST" action = "{{url_for('search')}}" class="d-flex">
+        <input type="hidden" name = "csrf_token" value="{{ csrf_token() }}" />
+       <input class="search" type="search" placeholder="Typing..." aria-label="Search", name = "searched">
+       <br><br><br>
+       <button class="boton" type="submit">Search</button>
+      </form>
+    </nav>
+   </div>
+
+</body>
